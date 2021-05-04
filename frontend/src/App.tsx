@@ -2,7 +2,7 @@
 function App() {
   return (
     <div>
-      <h1>Semana Spring React</h1>
+      <h1 className='text-primary'>Semana Spring React</h1>
     </div>
   );
 };
