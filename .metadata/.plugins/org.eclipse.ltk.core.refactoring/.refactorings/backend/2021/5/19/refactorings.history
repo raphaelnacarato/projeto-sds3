@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.devsuperior.dsvendas.config.SecutiryConfig.java&apos; to &apos;SecurityConfig.java&apos;&#x0D;&#x0A;- Original project: &apos;backend&apos;&#x0D;&#x0A;- Original element: &apos;com.devsuperior.dsvendas.config.SecutiryConfig.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.devsuperior.dsvendas.config.SecurityConfig.java&apos;" description="Rename compilation unit &apos;SecutiryConfig.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.devsuperior.dsvendas.config{SecutiryConfig.java" name="SecurityConfig.java" references="false" stamp="1620217855404" version="1.0"/>
+</session>
