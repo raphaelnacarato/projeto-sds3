@@ -11,27 +11,24 @@ type ChartData = {
 }
 
 const DonutChart = () => {
-   const [sellers, setSellers] = useState<SaleSum[]>([]);
-
-   // let chartData: ChartData = { labels: [], series: [] };
+   const [chartData, setChartData] = useState<ChartData>({ labels: [], series: [] });
 
    useEffect(() => {
       async function loadAmountBySeller() {
-         const { data } = await api.get('/sales/amount-by-seller');
+         const res = await api.get('/sales/amount-by-seller');
 
-         setSellers(data);
+         const data = res.data as SaleSum[];
+
+         const myLabels = data.map(sale => sale.sellerName);
+         const mySeries = data.map(sale => sale.sum);
+
+         setChartData({ labels: myLabels, series: mySeries });
       };
 
       loadAmountBySeller();
    }, [])
 
-   const series = sellers.map(sale => {
-      return sale.sum;
-   });
 
-   const labels = sellers.map(sale => {
-      return sale.sellerName;
-   });
 
    const options = {
       legend: {
@@ -41,8 +38,8 @@ const DonutChart = () => {
 
    return (
       <Chart
-         options={{ ...options, labels }}
-         series={series}
+         options={{ ...options, labels: chartData.labels }}
+         series={chartData.series}
          type='donut'
          height="240"
       />
